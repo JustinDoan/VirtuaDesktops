@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VirtuaDesktop"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="MainWindow" Height="204.984" Width="473.754">
+    <Grid Margin="0,0,0,177">
+        <Button x:Name="button" Content="Edit" HorizontalAlignment="Left" Height="28" Margin="252,137,0,-165" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="button1" Content="Remove" HorizontalAlignment="Left" Height="28" Margin="371,137,0,-165" VerticalAlignment="Top" Width="75"/>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="119" Margin="1,1,0,-120" VerticalAlignment="Top" Width="445">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Desktops" Width="150" DisplayMemberBinding="{Binding Desktop}"/>
+                    <GridViewColumn Header="Favorite" DisplayMemberBinding="{Binding Favorite}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
     </Grid>
 </Window>

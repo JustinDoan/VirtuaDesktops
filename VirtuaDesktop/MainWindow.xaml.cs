@@ -23,6 +23,15 @@ namespace VirtuaDesktop
         public MainWindow()
         {
             InitializeComponent();
+
+            this.listView.Items.Add(new MyItem { Desktop = "Desktop 1", Favorite = true });
+        }
+
+        public class MyItem
+        {
+            public string Desktop { get; set; }
+
+            public bool Favorite { get; set; }
         }
     }
 }

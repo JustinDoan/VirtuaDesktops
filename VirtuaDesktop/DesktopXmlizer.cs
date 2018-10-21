@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dynamic_Desktop
+namespace VirtuaDesktop
 {
     class DesktopXmlizer
     {

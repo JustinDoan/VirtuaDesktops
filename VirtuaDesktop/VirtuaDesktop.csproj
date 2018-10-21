@@ -55,6 +55,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="DesktopSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -64,8 +72,16 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Desktop.cs" />
+    <Compile Include="DesktopChanger.cs" />
+    <Compile Include="DesktopSelection.xaml.cs">
+      <DependentUpon>DesktopSelection.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DesktopXmlizer.cs" />
     <Compile Include="Desktop_Manager.cs" />
+    <Compile Include="EditWindow.xaml.cs">
+      <DependentUpon>EditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListViewItemCreator.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

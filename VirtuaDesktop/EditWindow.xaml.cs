@@ -10,28 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace VirtuaDesktop
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for EditWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class EditWindow : Window
     {
-        public MainWindow()
+        public EditWindow()
         {
             InitializeComponent();
-
         }
 
-       
-
-        private void openSelection(object sender, RoutedEventArgs e)
-        {
-            DesktopSelection selectionWindow = new DesktopSelection();
-            selectionWindow.Show();
-        }
     }
 }

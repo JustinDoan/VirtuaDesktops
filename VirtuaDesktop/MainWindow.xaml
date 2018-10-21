@@ -7,16 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="204.984" Width="473.754">
     <Grid Margin="0,0,0,177">
-        <Button x:Name="button" Content="Edit" HorizontalAlignment="Left" Height="28" Margin="252,137,0,-165" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button1" Content="Remove" HorizontalAlignment="Left" Height="28" Margin="371,137,0,-165" VerticalAlignment="Top" Width="75"/>
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="119" Margin="1,1,0,-120" VerticalAlignment="Top" Width="445">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Desktops" Width="150" DisplayMemberBinding="{Binding Desktop}"/>
-                    <GridViewColumn Header="Favorite" DisplayMemberBinding="{Binding Favorite}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-
+        <Label x:Name="activeDesktop" Content="" HorizontalAlignment="Left" Height="21" Margin="133,53,0,-74" VerticalAlignment="Top" Width="192"/>
+        <Button x:Name="changeButton" Content="Change" HorizontalAlignment="Left" Height="23" Margin="133,133,0,-156" VerticalAlignment="Top" Width="75" Click="openSelection"/>
+        <Button x:Name="defaultButton" Content="Default" HorizontalAlignment="Left" Height="23" Margin="250,133,0,-156" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>

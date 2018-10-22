@@ -33,5 +33,16 @@ namespace VirtuaDesktop
             DesktopSelection selectionWindow = new DesktopSelection();
             selectionWindow.Show();
         }
+
+        private void onDropdown(object sender, RoutedEventArgs e)
+        {
+            DropDown window = new DropDown();
+            window.Show();
+            Close();
+        }
+        protected override void OnLostFocus(RoutedEventArgs e)
+        {
+            Focus();
+        }
     }
 }

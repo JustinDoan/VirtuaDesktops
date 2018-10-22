@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VirtuaDesktop"
         mc:Ignorable="d"
-        Title="MainWindow" Height="136.017" Width="170.428">
+        Title="MainWindow" Height="136.017" Width="344.122">
     <Grid Margin="0,0,0,177">
         <Button x:Name="changeButton" Content="Change" Height="23" Margin="44,36,44,-59" VerticalAlignment="Top" Click="openSelection"/>
+        <Button x:Name="dropdownButton" Content="Dropdown" Height="24" Margin="44,70,44,-94" VerticalAlignment="Top" Click="onDropdown"/>
     </Grid>
 </Window>

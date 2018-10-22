@@ -65,8 +65,15 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DesktopIcons.cs" />
+    <Compile Include="DropDown.xaml.cs">
+      <DependentUpon>DropDown.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Wallpaper.cs" />
     <Page Include="DesktopSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DropDown.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

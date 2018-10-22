@@ -1,0 +1,22 @@
+﻿<Window x:Class="VirtuaDesktop.DropDown"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VirtuaDesktop"
+        mc:Ignorable="d"
+        Title="DropDown" Height="41.038" Width="300" WindowStyle="None">
+    <Grid>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="292" Height="32" ItemsSource="{Binding Path=Desktop}" 
+          DisplayMemberPath="Name" SelectionChanged="onSelectionChanged">
+            <ComboBox.ContextMenu>
+                <ContextMenu StaysOpen="true">
+                    <MenuItem Header="Edit" Click="onEditClick"/>
+                    <MenuItem Header="Quit" Click="onQuit"/>
+                </ContextMenu>
+            </ComboBox.ContextMenu>
+            
+            </ComboBox>
+
+    </Grid>
+</Window>

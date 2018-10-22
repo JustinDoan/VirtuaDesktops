@@ -22,6 +22,7 @@ namespace VirtuaDesktop
     {
 
         public Desktop_Manager desktopManager;
+        public DropDown dropDownWindow;
         public DesktopSelection()
         {
             InitializeComponent();
@@ -46,12 +47,12 @@ namespace VirtuaDesktop
             EditWindow editWindow = new EditWindow(this, desktop);
             editWindow.Show();
 
-            
+            /*
             Console.WriteLine($"Desktop Name: {desktop.Name}");
             Console.WriteLine($"Desktop Path: {desktop.Location}");
             Console.WriteLine($"Desktop IsDefault: {desktop.IsDefault}");
             Console.WriteLine($"Desktop IsFavorite: {desktop.IsFavorite}");
-            
+            */
 
         }
 
@@ -81,8 +82,11 @@ namespace VirtuaDesktop
                 DesktopChanger.Change_Desktop(desktop.Location);
                 Wallpaper.Set(new Uri(desktop.Background), Wallpaper.Style.Centered);
                 icons.ToggleDesktopIcons();
-                //We also close this window.
+                //We also close this window and reopen the main window
+                MainWindow window = new MainWindow();
+                window.Show();
                 Close();
+                
             }
         }
 

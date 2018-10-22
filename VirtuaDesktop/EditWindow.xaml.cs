@@ -27,6 +27,7 @@ namespace VirtuaDesktop
         Desktop originalDesktop;
         Desktop clonedDesktop;
         DesktopSelection selectionWindow;
+        DropDown dropDownWindow;
         public EditWindow(DesktopSelection _selectionWindow, Desktop _desktop)
         {
             selectionWindow = _selectionWindow;
@@ -36,6 +37,7 @@ namespace VirtuaDesktop
             InitializeComponent();
             
         }
+        
 
         private void onApply(object sender, RoutedEventArgs e)
         {
@@ -51,6 +53,8 @@ namespace VirtuaDesktop
 
             selectionWindow.desktopManager.Save_Desktops();
             selectionWindow.refreshListView();
+
+            
 
             //our correct ref gets updated and we then close the window
             Close();

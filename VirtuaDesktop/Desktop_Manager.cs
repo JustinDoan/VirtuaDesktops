@@ -10,32 +10,29 @@ namespace VirtuaDesktop
 {
     
 
-    class Desktop_Manager
+    public class Desktop_Manager
     {
         static string xmlFileLocation = @"Desktops.xml";
-        public static Desktop[] Desktop_List = new Desktop[8];
+        public List<Desktop> desktops = new List<Desktop>();
+        DesktopXmlizer _deskXML = new DesktopXmlizer();
 
-        public static void Load_Desktop()
+        public Desktop_Manager()
         {
-            int c = 0;
-            foreach (Desktop desktop in Desktop_List)
-            {
-                Desktop_List[c] = new Desktop("Name", "Location");
-                c++;
-            }
+            //When we create our Manager Object, we should attempt to get all of the desktops loaded ahead of time.
+            desktops = _deskXML.XMLToDesktop(xmlFileLocation);
         }
 
-        public static void Save_Desktops()
+        public void RefreshDesktops()
         {
-            using (StreamWriter file = new StreamWriter(xmlFileLocation))
-            {
-                
-                foreach (Desktop desktop in Desktop_List)
-                {
-                    XmlSerializer x = new XmlSerializer(desktop.GetType());
-                    x.Serialize(file, desktop);
-                }
-            }
+            //If we need to refresh our list from our file for some reason.
+            desktops = _deskXML.XMLToDesktop(xmlFileLocation);
         }
+
+        public void Save_Desktops()
+        {
+            //Save our list of desktops to our file.
+            _deskXML.DesktopsToXML(desktops);
+        }
+
     }
 }

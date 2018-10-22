@@ -7,14 +7,20 @@
         mc:Ignorable="d"
         Title="EditWindow" Height="300" Width="300">
     <Grid>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="19" Margin="120,31,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextAlignment="Center"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="19" Margin="120,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Center" Text="{Binding Name}"/>
         <Label x:Name="label" Content="Name:" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="90"/>
         <Label x:Name="label_Copy" Content="Location:" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Width="90"/>
         <Label x:Name="label_Copy1" Content="Background:" HorizontalAlignment="Left" Margin="10,108,0,0" VerticalAlignment="Top" Width="90"/>
-        <Button x:Name="button" Content="Apply" HorizontalAlignment="Left" Margin="40,239,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False"/>
+        <Button x:Name="button" Content="Apply" HorizontalAlignment="Left" Margin="40,239,0,0" VerticalAlignment="Top" Width="75" Click="onApply"/>
         <Button x:Name="button1" Content="Cancel" HorizontalAlignment="Left" Margin="165,239,0,0" VerticalAlignment="Top" Width="75" />
-        <Button x:Name="button2" Content="Pick Folder" HorizontalAlignment="Left" Margin="120,71,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="button2_Copy" Content="Pick Folder" HorizontalAlignment="Left" Margin="120,114,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="selectFolder" Content="Pick Folder" HorizontalAlignment="Left" Margin="120,71,0,0" VerticalAlignment="Top" Width="120" Click="onSelect"/>
+        <Button x:Name="pickImage" Content="Pick Image" HorizontalAlignment="Left" Margin="120,114,0,0" VerticalAlignment="Top" Width="120" Click="onImageSelect"/>
+        <Label x:Name="label1" Content="Make Default?" HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top" Width="90"/>
+        <CheckBox x:Name="checkBox" Content="" HorizontalAlignment="Left" Margin="170,160,0,0" VerticalAlignment="Top" Height="15" Width="17" RenderTransformOrigin="0.094,1.187" IsChecked="{Binding IsDefault}"/>
+        <Label x:Name="pathLabel" HorizontalAlignment="Left" Margin="120,91,0,0" VerticalAlignment="Top" Width="120" Content="{Binding Location}" Height="23" FontSize="10"/>
+        <Label x:Name="pathCurrent" Content="Currently located:" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" Width="105" FontSize="10"/>
+        <Label x:Name="backgroundLabel" Content="{Binding Background}" HorizontalAlignment="Left" Margin="120,134,0,0" VerticalAlignment="Top" Width="120" FontSize="10"/>
+        <Label x:Name="backgroundCurrent" Content="Current Background" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top" Width="105" FontSize="10"/>
 
     </Grid>
 </Window>

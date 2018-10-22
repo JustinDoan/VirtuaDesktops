@@ -20,12 +20,15 @@ namespace VirtuaDesktop
         public string Location { get; set; }
         [XmlElement("Name")]
         public string Name { get; set; }
+        [XmlElement("Background")]
+        public string Background { get; set; }
 
         public Desktop(string name, string location)
         {
             Name = name;
             Location = location;
         }
+
         //This is for the XML Serializer
         private Desktop() { }
 

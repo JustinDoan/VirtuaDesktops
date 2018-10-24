@@ -20,6 +20,15 @@ namespace VirtuaDesktop
         {
             //When we create our Manager Object, we should attempt to get all of the desktops loaded ahead of time.
             desktops = _deskXML.XMLToDesktop(xmlFileLocation);
+            if (desktops.Count == 0)
+            {
+                //If we get 0 desktops, we know that there is either a missing file or no desktops set up. 
+                //Either way we should prompt the user to create a new xml file. Even if there is an empty file, we can overwrite without
+                //any fear of data being lost.
+
+                
+
+            }
         }
 
         public void RefreshDesktops()

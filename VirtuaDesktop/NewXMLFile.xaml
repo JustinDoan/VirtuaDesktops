@@ -1,0 +1,18 @@
+﻿<Window x:Class="VirtuaDesktop.NewXMLFile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VirtuaDesktop"
+        mc:Ignorable="d"
+        Title="NewXMLFile" Height="300" Width="300">
+    <Grid>
+        <Label x:Name="label" Content="No Valid Desktop XML's were found." Margin="10,10,10,0" VerticalAlignment="Top" FontSize="14"/>
+        <Button x:Name="createButton" Content="Create New Desktop XML File" HorizontalAlignment="Left" Margin="10,209,0,0" VerticalAlignment="Top" Width="272" Height="50" Click="onCreateXMLFile" />
+        <Label x:Name="label1" Content="Missing XML File.&#xD;&#xA;No valid Desktop XML objects were found.&#xD;&#xA;Invalid Desktop XML structure.&#xD;&#xA;Incorrectly named XML File." HorizontalAlignment="Left" Margin="25,72,0,0" VerticalAlignment="Top" Height="63" Width="257" FontSize="10"/>
+        <Label x:Name="label2" Content="Why might this have happened?" HorizontalAlignment="Left" Margin="25,44,0,0" VerticalAlignment="Top" Height="23" Width="257" FontSize="10"/>
+        <Label x:Name="label3" Content="What will this button do?" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" Width="272" FontSize="14"/>
+        <Label x:Name="label4" Content="It will create a new XML File with one default desktop." HorizontalAlignment="Left" Margin="10,181,0,0" VerticalAlignment="Top" Width="272" FontSize="10"/>
+
+    </Grid>
+</Window>

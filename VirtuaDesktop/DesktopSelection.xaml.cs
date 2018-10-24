@@ -26,15 +26,7 @@ namespace VirtuaDesktop
         public DesktopSelection()
         {
             InitializeComponent();
-            listView.Items.Clear();
-            //We create our desktopManager, and use the list to display our desktops.
-            desktopManager = new Desktop_Manager();
-            foreach (Desktop desktop in desktopManager.desktops)
-            {
-                listView.Items.Add(desktop);
-            }
             
-
         }
 
         private void onEditClick(object sender, RoutedEventArgs e)
@@ -80,7 +72,10 @@ namespace VirtuaDesktop
                 Desktop desktop = (Desktop)listView.SelectedItem;
                 icons.ToggleDesktopIcons();
                 DesktopChanger.Change_Desktop(desktop.Location);
-                Wallpaper.Set(new Uri(desktop.Background), Wallpaper.Style.Centered);
+                if (desktop.Background != null)
+                {
+                    Wallpaper.Set(new Uri(desktop.Background), Wallpaper.Style.Centered);
+                }
                 icons.ToggleDesktopIcons();
                 //We also close this window and reopen the main window
                 MainWindow window = new MainWindow();
@@ -102,10 +97,58 @@ namespace VirtuaDesktop
             DesktopIcons icons = new DesktopIcons();
             icons.ToggleDesktopIcons();
             DesktopChanger.Change_Desktop(desktop.Location);
-            Wallpaper.Set(new Uri(desktop.Background), Wallpaper.Style.Centered);
+            if (desktop.Background != null) {
+                Wallpaper.Set(new Uri(desktop.Background), Wallpaper.Style.Centered);
+            }
             icons.ToggleDesktopIcons();
             //We also close this window.
             Close();
+
+
+        }
+
+        private void onLoad(object sender, RoutedEventArgs e)
+        {
+            listView.Items.Clear();
+            //We create our desktopManager, and use the list to display our desktops.
+            desktopManager = new Desktop_Manager();
+            //It's possible that we don't get any desktops due to missing xml or no desktops setup.
+            desktopManager.RefreshDesktops();
+            if (desktopManager.desktops.Count == 0)
+            {
+
+                NewXMLFile window = new NewXMLFile();
+                window.Show();
+                Close();
+            }
+            else
+            {
+                foreach (Desktop desktop in desktopManager.desktops)
+                {
+                    listView.Items.Add(desktop);
+                }
+            }
+        }
+
+        private void onCreate(object sender, RoutedEventArgs e)
+        {
+            //When we create a new desktop, we basically display the edit window but with a different title.
+            CreateWindow window = new CreateWindow(this);
+
+        }
+
+        private void onRemove(object sender, RoutedEventArgs e)
+        {
+            //When the remove button is clicked, we will make a prompt to ensure that the user wants to remove that desktop
+            //If the response is ok we continue, if not ok, we just return.
+
+
+
+
+
+
+
+
 
 
         }
